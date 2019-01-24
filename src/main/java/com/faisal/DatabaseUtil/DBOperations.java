@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.faisal.Model.Employee;
+import com.faisal.Model.Order;
 
 public class DBOperations {
 
@@ -135,11 +136,11 @@ public class DBOperations {
 		ResultSet rs = initialize().createStatement().executeQuery(getTopThreeSQL);
 
 		ArrayList<Employee> employeeList = new ArrayList<>();
-		
+
 		while (rs.next()) {
 			int id = rs.getInt("empid");
 			String name = rs.getString("empname");
-			int salary =rs.getInt("empsal");
+			int salary = rs.getInt("empsal");
 			String country = rs.getString("empcountry");
 			String city = rs.getString("empcity");
 			String zipcode = rs.getString("empzip");
@@ -160,31 +161,28 @@ public class DBOperations {
 
 		return avgSal;
 	}
-	
-	public Employee getEmployee(int empID) throws SQLException
-	{
+
+	public Employee getEmployee(int empID) throws SQLException {
 		String getEmployeeSQL = "SELECT * FROM [dbo].[faisal_employee] WHERE EMP_ID = ?";
-		
+
 		PreparedStatement preparedStatement = initialize().prepareStatement(getEmployeeSQL);
 		// set the preparedstatement parameters
 		preparedStatement.setInt(1, empID);
-		
+
 		ResultSet rs = preparedStatement.executeQuery();
 
-		
-		while(rs.next())
-		{
+		while (rs.next()) {
 			String empName = rs.getString("emp_name");
 			double salary = rs.getDouble("emp_salary");
 			String country = rs.getString("emp_country");
 			String city = rs.getString("emp_city");
 			String zipCode = rs.getString("emp_zipcode");
-			return new Employee(empID, empName,salary,country,city,zipCode);
+			return new Employee(empID, empName, salary, country, city, zipCode);
 		}
-		
-		return null;//jodi employee na pay tahole null return korteci
+
+		return null;// jodi employee na pay tahole null return korteci
 	}
-	
+
 	public void displayAll() throws SQLException {
 		String selectSQL = "SELECT * FROM [dbo].[faisal_employee]";
 
@@ -206,4 +204,34 @@ public class DBOperations {
 
 	}
 
+	public void insertOrder(Order order) throws SQLException {
+
+		String insertOrderSQL = "INSERT INTO [dbo].[faisal_orders]"
+				+ "(emp_id, order_name, order_quantity, order_price) VALUES" + "(?,?,?,?)";
+
+		PreparedStatement preparedStatement = initialize().prepareStatement(insertOrderSQL);
+
+		preparedStatement.setInt(1, order.getEmp_id());
+		preparedStatement.setString(2, order.getOrder_name());
+		preparedStatement.setInt(3, order.getOrder_quantity());
+		preparedStatement.setInt(4, order.getOrder_price());
+		// execute insert SQL stetement
+		preparedStatement.execute();
+
+	}
+
+	public void innerJoinOrder() throws SQLException {
+		String innerJoinOrder = "SELECT faisal_orders.order_id as orderID,"
+				+ "faisal_employee.emp_id as empID, faisal_employee.emp_name as empName"
+				+ "FROM [dbo].[faisal_orders]"
+				+ "INNER JOIN [dbo].[faisal_employee] ON faisal_orders.emp_id = faisal_employee.emp_id";
+
+		ResultSet rs = initialize().createStatement().executeQuery(innerJoinOrder);
+
+		while (rs.next()) {
+			int id = rs.getInt("emp_id");
+			System.out.println(id);
+		}
+
+	}
 }

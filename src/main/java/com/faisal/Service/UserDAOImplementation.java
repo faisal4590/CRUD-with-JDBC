@@ -6,16 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+import com.faisal.DAO.OrderDAO;
 import com.faisal.DAO.UserDAO;
 import com.faisal.DatabaseUtil.DBOperations;
 import com.faisal.Model.Employee;
+import com.faisal.Model.Order;
 
 import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class UserDAOImplementation implements UserDAO {
+public class UserDAOImplementation implements UserDAO,OrderDAO {
 	
 	static Logger logger = Logger.getLogger(UserDAOImplementation.class.getName());
 	
@@ -191,4 +193,43 @@ public class UserDAOImplementation implements UserDAO {
 		return avg;
 	}
 
+	//Implementing orderDAO
+	
+	@Override
+	public boolean addOrder(Order order) {
+		DBOperations dbOperations = new DBOperations();
+
+		try {
+			dbOperations.insertOrder(order);
+			log.info("Order added successfully");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			log.warn("Order is not added, Please try again, " + e.getMessage());
+			e.printStackTrace();
+		}
+
+		// TODO Auto-generated method stub
+		return true;
+	}
+	
+	@Override
+	public boolean innerJoin() {
+		DBOperations dbOperations = new DBOperations();
+
+		try {
+			dbOperations.innerJoinOrder();
+			log.info("Order added successfully");
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			log.warn("Order is not added, Please try again, " + e.getMessage());
+			e.printStackTrace();
+		}
+
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	
 }

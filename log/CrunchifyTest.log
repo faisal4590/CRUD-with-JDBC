@@ -11,3 +11,17 @@
 2019-01-24 15:50:57,785 [main] INFO  UserDAOImplementation:136 - Successfully got the 2nd max salary
 2019-01-24 15:50:57,785 [main] INFO  UserDAOImplementation:120 - Successfully got the min salary
 2019-01-24 15:50:57,792 [main] INFO  UserDAOImplementation:152 - Successfully got the 2nd min salary
+2019-01-24 17:34:22,646 [main] INFO  DBConnection:28 - connection created.
+2019-01-24 17:34:23,047 [main] WARN  UserDAOImplementation:207 - User is not added, Please try again, Invalid column name 'emp__id'.
+2019-01-24 17:37:02,486 [main] INFO  DBConnection:28 - connection created.
+2019-01-24 17:37:02,511 [main] WARN  UserDAOImplementation:207 - User is not added, Please try again, Invalid column name 'oder_name'.
+2019-01-24 17:37:21,115 [main] INFO  DBConnection:28 - connection created.
+2019-01-24 17:37:21,133 [main] WARN  UserDAOImplementation:207 - User is not added, Please try again, Cannot insert the value NULL into column 'order_id', table 'DEV_TEST.dbo.faisal_order'; column does not allow nulls. INSERT fails.
+2019-01-24 17:50:43,699 [main] INFO  DBConnection:28 - connection created.
+2019-01-24 17:50:43,753 [main] INFO  UserDAOImplementation:204 - Employee added successfully
+2019-01-24 17:55:40,581 [main] INFO  DBConnection:28 - connection created.
+2019-01-24 17:55:40,604 [main] INFO  UserDAOImplementation:204 - Order added successfully
+2019-01-24 17:56:06,060 [main] INFO  DBConnection:28 - connection created.
+2019-01-24 17:56:06,098 [main] INFO  UserDAOImplementation:204 - Order added successfully
+2019-01-24 18:31:14,148 [main] INFO  DBConnection:28 - connection created.
+2019-01-24 18:32:34,730 [main] INFO  DBConnection:28 - connection created.
