@@ -21,7 +21,9 @@ public class DBConnection {
 			// Load the SQLServerDriver class, build the
 			// connection string, and get a connection
 			// Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			conn = DriverManager.getConnection("jdbc:sqlserver://vNTDACWSSQLD002:1433;"
+//			conn = DriverManager.getConnection("jdbc:sqlserver://vNTDACWSSQLD002:1433;"
+//					+ "databaseName=DEV_TEST;user=dev_test_dbo;password=dev_test_dbo123");
+			conn = DriverManager.getConnection("jdbc:jtds:sqlserver://vNTDACWSSQLD002:1433;"
 					+ "databaseName=DEV_TEST;user=dev_test_dbo;password=dev_test_dbo123");
 			log.info("connection created.");
 			// conn.close();

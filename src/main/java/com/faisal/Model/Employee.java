@@ -16,7 +16,7 @@ public class Employee {
 	@NonNull
 	private String emp_name;
 	@NonNull
-	private float emp_salary ;
+	private double emp_salary ;
 	@NonNull
 	private String emp_country;
 	@NonNull
