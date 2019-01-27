@@ -221,17 +221,78 @@ public class DBOperations {
 	}
 
 	public void innerJoinOrder() throws SQLException {
-		String innerJoinOrder = "SELECT faisal_orders.order_id as orderID,"
-				+ "faisal_employee.emp_id as empID, faisal_employee.emp_name as empName"
+		String innerJoinOrder = "SELECT [dbo].[faisal_orders].[order_id],"
+				+ "[dbo].[faisal_employee].[emp_id], [dbo].[faisal_employee].[emp_name]"
 				+ "FROM [dbo].[faisal_orders]"
-				+ "INNER JOIN [dbo].[faisal_employee] ON faisal_orders.emp_id = faisal_employee.emp_id";
+				+ "INNER JOIN [dbo].[faisal_employee] ON [dbo].[faisal_orders].[emp_id] = [faisal_employee].[emp_id]";
 
-		ResultSet rs = initialize().createStatement().executeQuery(innerJoinOrder);
+		PreparedStatement preparedStatement = initialize().prepareStatement(innerJoinOrder);
+		preparedStatement.execute();//returns true/false based on successful execution
 
-		while (rs.next()) {
-			int id = rs.getInt("emp_id");
-			System.out.println(id);
-		}
+	}
+	
+	public void outerJoinOrder() throws SQLException {
+		String outerJoinOrder = "SELECT [dbo].[faisal_orders].[order_id],"
+				+ "[dbo].[faisal_employee].[emp_id], [dbo].[faisal_employee].[emp_name]"
+				+ "FROM [dbo].[faisal_orders]"
+				+ "LEFT OUTER JOIN [dbo].[faisal_employee] ON [dbo].[faisal_orders].[emp_id] = [faisal_employee].[emp_id]";
+
+		PreparedStatement preparedStatement = initialize().prepareStatement(outerJoinOrder);
+		preparedStatement.execute();//returns true/false based on successful execution
+
+	}
+	
+	public void leftJoinOrder() throws SQLException {
+		String outerJoinOrder = "SELECT [dbo].[faisal_orders].[order_id],"
+				+ "[dbo].[faisal_employee].[emp_id], [dbo].[faisal_employee].[emp_name]"
+				+ "FROM [dbo].[faisal_orders]"
+				+ "LEFT JOIN [dbo].[faisal_employee] ON [dbo].[faisal_orders].[emp_id] = [faisal_employee].[emp_id]";
+
+		PreparedStatement preparedStatement = initialize().prepareStatement(outerJoinOrder);
+		preparedStatement.execute();//returns true/false based on successful execution
+
+	}
+	
+	public void rightJoinOrder() throws SQLException {
+		String rightJoinOrder = "SELECT [dbo].[faisal_orders].[order_id],"
+				+ "[dbo].[faisal_employee].[emp_id], [dbo].[faisal_employee].[emp_name]"
+				+ "FROM [dbo].[faisal_orders]"
+				+ "RIGHT JOIN [dbo].[faisal_employee] ON [dbo].[faisal_orders].[emp_id] = [faisal_employee].[emp_id]";
+
+		PreparedStatement preparedStatement = initialize().prepareStatement(rightJoinOrder);
+		preparedStatement.execute();//returns true/false based on successful execution
+
+	}
+	
+	public void fullJoinOrder() throws SQLException {
+		String fullJoinOrder = "SELECT [dbo].[faisal_orders].[order_id],"
+				+ "[dbo].[faisal_employee].[emp_id], [dbo].[faisal_employee].[emp_name]"
+				+ "FROM [dbo].[faisal_orders]"
+				+ "FULL JOIN [dbo].[faisal_employee] ON [dbo].[faisal_orders].[emp_id] = [faisal_employee].[emp_id]";
+
+		PreparedStatement preparedStatement = initialize().prepareStatement(fullJoinOrder);
+		preparedStatement.execute();//returns true/false based on successful execution
+
+	}
+	
+	public void selfJoinOrder() throws SQLException {
+		String selfJoinOrder = "SELECT" + 
+				" e.emp_name + ' ' + e.emp_city employee," + 
+				" m.emp_name + ' ' + m.emp_city manager FROM" + 
+				" [dbo].[faisal_employee] e" + 
+				"INNER JOIN [dbo].[faisal_employee] m ON "
+				+ "[e].[emp_id] = [m].[emp_id]";
+		PreparedStatement preparedStatement = initialize().prepareStatement(selfJoinOrder);
+		preparedStatement.execute();//returns true/false based on successful execution
+
+	}
+	
+	public void wildCardsOrder() throws SQLException {
+		String wildcardsSQL = "Select * from [dbo].[faisal_Employee] where"
+				+ " [faisal_Employee].[emp_name] like 'Mus%' "
+				+ "order by emp_salary";
+		PreparedStatement preparedStatement = initialize().prepareStatement(wildcardsSQL);
+		preparedStatement.execute();//returns true/false based on successful execution
 
 	}
 }

@@ -218,11 +218,119 @@ public class UserDAOImplementation implements UserDAO,OrderDAO {
 
 		try {
 			dbOperations.innerJoinOrder();
-			log.info("Order added successfully");
+			log.info("Inner join performed successfully");
 			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			log.warn("Order is not added, Please try again, " + e.getMessage());
+			log.warn("Inner join is not performed successfully, Please try again, " + e.getMessage());
+			e.printStackTrace();
+		}
+
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	@Override
+	public boolean outerJoin() {
+		DBOperations dbOperations = new DBOperations();
+
+		try {
+			dbOperations.outerJoinOrder();
+			log.info("Outer join performed successfully");
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			log.warn("Outer join is not performed successfully, Please try again, " + e.getMessage());
+			e.printStackTrace();
+		}
+
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	@Override
+	public boolean leftJoin() {
+		DBOperations dbOperations = new DBOperations();
+
+		try {
+			dbOperations.outerJoinOrder();
+			log.info("Left join performed successfully");
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			log.warn("Left join is not performed successfully, Please try again, " + e.getMessage());
+			e.printStackTrace();
+		}
+
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	@Override
+	public boolean rightJoin() {
+		DBOperations dbOperations = new DBOperations();
+
+		try {
+			dbOperations.rightJoinOrder();
+			log.info("Right join performed successfully");
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			log.warn("Right join is not performed successfully, Please try again, " + e.getMessage());
+			e.printStackTrace();
+		}
+
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	@Override
+	public boolean fullJoin() {
+		DBOperations dbOperations = new DBOperations();
+
+		try {
+			dbOperations.fullJoinOrder();
+			log.info("Full join performed successfully");
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			log.warn("Full join is not performed successfully, Please try again, " + e.getMessage());
+			e.printStackTrace();
+		}
+
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	@Override
+	public boolean selfJoin() {
+		DBOperations dbOperations = new DBOperations();
+
+		try {
+			dbOperations.selfJoinOrder();
+			log.info("Self join performed successfully");
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			log.warn("Self join is not performed successfully, Please try again, " + e.getMessage());
+			e.printStackTrace();
+		}
+
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	@Override
+	public boolean wildCards() {
+		DBOperations dbOperations = new DBOperations();
+
+		try {
+			dbOperations.wildCardsOrder();
+			log.info("Wildcards performed successfully");
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			log.warn("Wildcards is not performed successfully, Please try again, " + e.getMessage());
 			e.printStackTrace();
 		}
 
