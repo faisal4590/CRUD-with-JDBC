@@ -295,4 +295,28 @@ public class DBOperations {
 		preparedStatement.execute();//returns true/false based on successful execution
 
 	}
+
+	//example of stored procedure
+	public void storedProcedureExample() throws SQLException
+	{
+		String SPsql = "EXEC SelectAllEmployee ?";
+		PreparedStatement preparedStatement = initialize().prepareStatement(SPsql);
+		preparedStatement.setString(1, "Faisal Ibna Aziz");
+		
+		ResultSet rs = preparedStatement.executeQuery();
+		
+		while(rs.next())
+		{
+			// Retrieve by column name
+			String empName = rs.getString("emp_name");
+			double salary = rs.getDouble("emp_salary");
+			String country = rs.getString("emp_country");
+			String city = rs.getString("emp_city");
+			String zipCode = rs.getString("emp_zipcode");
+
+			// Display values
+			System.out.println("After using stored procedure: " +  "Name: " + empName + ", Salary: " + salary + ", Country: " + country + ", City: " + city
+					+ ", Zip code : " + zipCode);
+		}
+	}
 }

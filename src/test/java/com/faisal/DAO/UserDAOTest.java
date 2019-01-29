@@ -113,6 +113,8 @@ public class UserDAOTest {
 	public void show() throws SQLException {
 		DBOperations dbOperations = new DBOperations();
 		dbOperations.displayAll(); // dbOperations.getTopThree();
+
+		dbOperations.storedProcedureExample();
 	}
 
 }

@@ -139,3 +139,46 @@
 2019-01-27 12:30:12,315 [main] INFO  UserDAOImplementation:221 - Inner join performed successfully
 2019-01-27 12:30:12,315 [main] INFO  UserDAOImplementation:311 - Self join performed successfully
 2019-01-27 12:30:12,346 [main] INFO  UserDAOImplementation:293 - Full join performed successfully
+2019-01-27 16:33:39,278 [main] INFO  DBConnection:28 - connection created.
+2019-01-27 16:33:39,548 [main] INFO  UserDAOImplementation:257 - Left join performed successfully
+2019-01-27 16:33:39,548 [main] INFO  UserDAOImplementation:239 - Outer join performed successfully
+2019-01-27 16:33:39,564 [main] INFO  UserDAOImplementation:329 - Wildcards performed successfully
+2019-01-27 16:33:39,595 [main] INFO  UserDAOImplementation:275 - Right join performed successfully
+2019-01-27 16:33:39,595 [main] INFO  UserDAOImplementation:221 - Inner join performed successfully
+2019-01-27 16:33:39,664 [main] INFO  UserDAOImplementation:293 - Full join performed successfully
+2019-01-27 16:34:03,598 [main] INFO  DBConnection:28 - connection created.
+2019-01-27 16:34:03,652 [main] INFO  UserDAOImplementation:82 - Employee has been found.
+2019-01-27 16:34:03,668 [main] INFO  UserDAOImplementation:186 - Successfully got the average salary
+2019-01-27 16:34:03,684 [main] INFO  UserDAOImplementation:169 - Successfully got the top three Employee
+2019-01-27 16:34:03,734 [main] INFO  UserDAOImplementation:106 - Successfully got the max salary
+2019-01-27 16:34:03,734 [main] INFO  UserDAOImplementation:138 - Successfully got the 2nd max salary
+2019-01-27 16:34:03,749 [main] INFO  UserDAOImplementation:122 - Successfully got the min salary
+2019-01-27 16:34:03,749 [main] INFO  UserDAOImplementation:154 - Successfully got the 2nd min salary
+2019-01-27 16:34:31,514 [main] INFO  DBConnection:28 - connection created.
+2019-01-27 16:34:31,552 [main] INFO  UserDAOImplementation:82 - Employee has been found.
+2019-01-27 16:34:31,567 [main] INFO  UserDAOImplementation:186 - Successfully got the average salary
+2019-01-27 16:34:31,567 [main] INFO  UserDAOImplementation:106 - Successfully got the max salary
+2019-01-27 16:34:31,583 [main] INFO  UserDAOImplementation:138 - Successfully got the 2nd max salary
+2019-01-27 16:34:31,583 [main] INFO  UserDAOImplementation:122 - Successfully got the min salary
+2019-01-27 16:34:31,583 [main] INFO  UserDAOImplementation:154 - Successfully got the 2nd min salary
+2019-01-29 13:11:07,477 [main] INFO  DBConnection:28 - connection created.
+2019-01-29 13:11:07,577 [main] INFO  UserDAOImplementation:82 - Employee has been found.
+2019-01-29 13:11:07,577 [main] INFO  UserDAOImplementation:186 - Successfully got the average salary
+2019-01-29 13:11:07,640 [main] INFO  UserDAOImplementation:106 - Successfully got the max salary
+2019-01-29 13:11:07,640 [main] INFO  UserDAOImplementation:138 - Successfully got the 2nd max salary
+2019-01-29 13:11:07,640 [main] INFO  UserDAOImplementation:122 - Successfully got the min salary
+2019-01-29 13:11:07,640 [main] INFO  UserDAOImplementation:154 - Successfully got the 2nd min salary
+2019-01-29 13:11:31,214 [main] INFO  DBConnection:28 - connection created.
+2019-01-29 13:11:31,245 [main] INFO  UserDAOImplementation:82 - Employee has been found.
+2019-01-29 13:11:31,261 [main] INFO  UserDAOImplementation:186 - Successfully got the average salary
+2019-01-29 13:11:31,261 [main] INFO  UserDAOImplementation:106 - Successfully got the max salary
+2019-01-29 13:11:31,276 [main] INFO  UserDAOImplementation:138 - Successfully got the 2nd max salary
+2019-01-29 13:11:31,276 [main] INFO  UserDAOImplementation:122 - Successfully got the min salary
+2019-01-29 13:11:31,276 [main] INFO  UserDAOImplementation:154 - Successfully got the 2nd min salary
+2019-01-29 13:12:08,047 [main] INFO  DBConnection:28 - connection created.
+2019-01-29 13:12:08,824 [main] INFO  UserDAOImplementation:82 - Employee has been found.
+2019-01-29 13:12:08,832 [main] INFO  UserDAOImplementation:186 - Successfully got the average salary
+2019-01-29 13:12:08,840 [main] INFO  UserDAOImplementation:106 - Successfully got the max salary
+2019-01-29 13:12:08,844 [main] INFO  UserDAOImplementation:138 - Successfully got the 2nd max salary
+2019-01-29 13:12:08,847 [main] INFO  UserDAOImplementation:122 - Successfully got the min salary
+2019-01-29 13:12:08,850 [main] INFO  UserDAOImplementation:154 - Successfully got the 2nd min salary
